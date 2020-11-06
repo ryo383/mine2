@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    <!-- import CSS -->
+        <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!-- import Vue before Element -->
+        <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <!-- import JavaScript -->
+        <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+
+        <meta name=”viewport” content=”width=device-width,initial-scale=1.0″>
+
+
+    
+    </head>
+    <body>
+        <div id="wrapper">
+            
+            <el-row class="block" type="flex" justify="center">
+                <!-- ログインフォーム枠 -->
+                
+                    <el-col class="Box" :span="10" :xs="18">ログインしてください
+                        <!-- ログインフォームの中身 -->
+                        <p><el-input  class="input" placeholder="ID" v-model="id"></el-input></p>
+                        <p><el-input  class="input" placeholder="パスワード" v-model="password" show-password></el-input></p>
+                        <el-button class="button1">ログイン</el-button>
+
+                        <!-- 一旦非実装 -->
+                        <!-- <el-button class="button2">パスワード再設定</el-button> -->
+                    </el-col>
+            
+            </el-row>
+        </div>
+    </body>
+
+    <script>
+        var wrapper = new Vue({
+            el:"#wrapper",
+            data:{
+                id: '',
+                password: ''
+            },
+        })
+
+    </script>
+
+    <style>
+        .body{
+            position: relative;
+        }
+
+        #wrapper{
+            width:100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform : translate(-50%,-50%);
+            transform : translate(-50%,-50%);
+
+        }
+        .Box{
+            border:solid 1px black;
+            padding:30px 30px 30px 43px;
+        }
+        
+        .input{
+            width:96%;
+        }
+        .button1{
+            width:39%;
+            margin-left:57%;
+        }
+
+        @media screen and (max-width: 768px){
+            .button1{
+                margin-left:0;
+                width:96%;
+            }
+        }
+
+        /* .button2{ */
+            /* width:54%;
+            margin-left:-10px;
+        } */
+    </style>
+</html>
